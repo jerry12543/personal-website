@@ -1,0 +1,144 @@
+body {
+    font-family: 'Gill Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    /* Black background */
+    color: #fff;
+    /* White text */
+}
+
+section {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 100vh;
+}
+
+#time {
+    font-size: 8em;
+}
+
+#welcomePage {
+    font-size: 4em;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 3s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+}
+
+/* ── Footer ── */
+.footer {
+    background: transparent;
+    height: 100vh;
+    overflow: visible;
+}
+
+.footer-upper {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 0 40px 48px;
+    background: #000;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-wordmark {
+    position: sticky;
+    bottom: 0;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    user-select: none;
+}
+
+.footer-wordmark-text {
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    font-size: clamp(2rem, 8vw, 8rem);
+    color: #fff;
+    opacity: 0.12;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    line-height: 0.85;
+}
+
+.footer-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 48px;
+}
+
+.footer-social-link {
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.45);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.5rem, 4vh, 5rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    padding: 6px 0;
+    transition: color 0.25s ease;
+}
+
+.footer-social-link:hover {
+    color: #fff;
+}
+
+.footer-social-link .social-icon {
+    position: absolute;
+    left: 0;
+    display: flex;
+    align-items: center;
+    width: 0.7em;
+    opacity: 0;
+    transform: translateX(-0.3em);
+    transition: opacity 0.25s ease, transform 0.3s ease;
+}
+
+.footer-social-link:hover .social-icon {
+    opacity: 0.7;
+    transform: translateX(0);
+}
+
+.footer-social-link .social-name {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.footer-social-link:hover .social-name {
+    transform: translateX(calc(0.7em + 12px));
+}
+
+.footer-social-link .social-icon svg {
+    width: 0.7em;
+    height: 0.7em;
+    flex-shrink: 0;
+    fill: currentColor;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .footer-social-link {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .footer-upper {
+        padding-left: 24px;
+    }
+}
