@@ -1,11 +1,23 @@
+:root {
+    --color-bg: rgba(28, 2, 33, 1); /* background */
+    --color-fg: rgba(255, 230, 232, 1); /* text */
+    --color-fg-muted: rgba(255, 230, 232, 0.45); /* faded text */
+    --color-border: rgba(255, 230, 232, 0.2); /* subtle border */
+    --color-surface-hover: rgba(
+        255,
+        230,
+        232,
+        0.07
+    ); /* hover background tint */
+    --color-modal-bg: rgba(164, 196, 223, 1); /* modal background (#8C001A) */
+}
+
 body {
-    font-family: 'Gill Sans', sans-serif;
+    font-family: "Gill Sans", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000;
-    /* Black background */
-    color: #fff;
-    /* White text */
+    background-color: var(--color-bg);
+    color: var(--color-fg);
 }
 
 section {
@@ -19,19 +31,108 @@ section {
     font-size: 8em;
 }
 
-#welcomePage {
-    font-size: 4em;
+/* ── Card Link ── */
+.card-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--color-fg);
+    font-size: 1rem;
+    background: transparent;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+    cursor: pointer;
 }
 
-.hidden {
+.card-link:hover {
+    background: var(--color-surface-hover);
+    border-color: var(--color-fg-muted);
+}
+
+.card-link-arrow {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* ── Modal ── */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: var(--color-modal-bg);
+    z-index: 100;
     opacity: 0;
-    filter: blur(5px);
-    transition: all 3s;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-.show {
+.modal.open {
     opacity: 1;
-    filter: blur(0);
+    pointer-events: all;
+}
+
+.modal-close {
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 101;
+    background: none;
+    border: none;
+    color: var(--color-fg-muted);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    padding: 0;
+}
+
+.modal-close:hover {
+    color: var(--color-fg);
+}
+
+/* ── Interest Collage ── */
+.interest-collage {
+    column-count: 4;
+    column-gap: 1.5rem;
+    padding: 5rem 3rem 3rem;
+}
+
+@media (max-width: 1100px) {
+    .interest-collage {
+        column-count: 3;
+    }
+}
+
+@media (max-width: 750px) {
+    .interest-collage {
+        column-count: 2;
+    }
+}
+
+.interest-card {
+    display: block;
+    margin: 0 0 1.5rem;
+    break-inside: avoid;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.25s ease;
+}
+
+.interest-card:hover {
+    transform: translateY(-4px);
+}
+
+.interest-card img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* ── Footer ── */
@@ -44,12 +145,27 @@ section {
 .footer-upper {
     height: 50vh;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0 0 40px 48px;
-    background: #000;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 48px 40px 48px;
+    background: var(--color-bg);
     position: relative;
     z-index: 2;
+}
+
+.footer-taglines {
+    text-align: right;
+    color: var(--color-fg-muted);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(1rem, 5vh, 1.5rem);
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 48px;
+}
+
+.footer-taglines p {
+    margin: 0;
 }
 
 .footer-wordmark {
@@ -64,10 +180,10 @@ section {
 }
 
 .footer-wordmark-text {
-    font-family: 'Cinzel', serif;
+    font-family: "Cinzel", serif;
     font-weight: 400;
     font-size: clamp(2rem, 8vw, 8rem);
-    color: #fff;
+    color: var(--color-fg);
     opacity: 0.12;
     letter-spacing: 0.02em;
     white-space: nowrap;
@@ -86,8 +202,8 @@ section {
     align-items: center;
     position: relative;
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.45);
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    color: var(--color-fg-muted);
+    font-family: "Cormorant Garamond", Georgia, serif;
     font-size: clamp(2.5rem, 4vh, 5rem);
     font-weight: 300;
     letter-spacing: -0.02em;
@@ -97,7 +213,7 @@ section {
 }
 
 .footer-social-link:hover {
-    color: #fff;
+    color: var(--color-fg);
 }
 
 .footer-social-link .social-icon {
@@ -108,7 +224,9 @@ section {
     width: 0.7em;
     opacity: 0;
     transform: translateX(-0.3em);
-    transition: opacity 0.25s ease, transform 0.3s ease;
+    transition:
+        opacity 0.25s ease,
+        transform 0.3s ease;
 }
 
 .footer-social-link:hover .social-icon {

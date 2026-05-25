@@ -1,43 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <!-- Metadata Stuff-->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>welcome!</title>
+        <!-- Link to styles-->
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Cinzel&display=swap"
+            rel="stylesheet"
+        />
+        <script defer src="app.js"></script>
+    </head>
 
-<head>
-    <!-- Metadata Stuff-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Website</title>
-    <!-- Link to styles-->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Cinzel&display=swap" rel="stylesheet">
-    <script defer src="app.js"></script>
-</head>
+    <body>
+        <section>
+            <h1 id="time"></h1>
+        </section>
 
-<body>
-    <section>
-        <h1 id="time"></h1>
-    </section>
+        <section>
+            <h2>the time you enjoy wasting is not wasted time.</h2>
+            <p>- Bertrand Russell</p>
+            <a href="#" class="card-link" id="wasteTimeBtn">
+                <span>anybody wanna waste some time?</span>
+                <span class="card-link-arrow">↗</span>
+            </a>
+        </section>
 
-    <section class="hidden">
-        <h2>
-            The time you enjoy wasting is not wasted time
-        </h2>
-        <p> - Bertrand Russell</p>
-    </section>
-
-    <section class="hidden">
-        <h1 id="welcomePage"> Welcome to my portfolio (must change)</h1>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-upper">
-            <nav class="footer-socials" id="footerSocials" aria-label="Social links"></nav>
+        <div class="modal" id="wasteTimeModal" aria-hidden="true">
+            <button class="modal-close" id="modalClose" aria-label="Close">
+                ✕
+            </button>
+            <div class="interest-collage" id="interestCollage"></div>
         </div>
-        <div class="footer-wordmark" aria-hidden="true">
-            <span class="footer-wordmark-text">Jerry Zhu</span>
-        </div>
-    </footer>
 
-</body>
-
+        <footer class="footer">
+            <div class="footer-upper">
+                <nav
+                    class="footer-socials"
+                    id="footerSocials"
+                    aria-label="Social links"
+                ></nav>
+                <div class="footer-taglines">
+                    <p>no man is a failure who has friends.</p>
+                    <p>let's connect!</p>
+                </div>
+            </div>
+            <div class="footer-wordmark" aria-hidden="true">
+                <span class="footer-wordmark-text">Jerry Zhu</span>
+            </div>
+        </footer>
+    </body>
 </html>

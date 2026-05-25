@@ -1,0 +1,28 @@
+[
+  {
+    "music": [
+      {
+        "name": "among my swan",
+        "url": "https://open.spotify.com/album/4mhpbf7jYc0L1nBceoebIE",
+        "image": "data/assets/mazzy_star_among_my_swan.png"
+      },
+      {
+        "name": "tha carter ii",
+        "url": "https://open.spotify.com/album/5qyUw6x9fjZPoQHUwuDu39",
+        "image": "data/assets/lil_wayne_tha_carter_ii.jpg"
+      }
+    ],
+    "film": [
+      {
+        "name": "chungking express",
+        "url": "https://letterboxd.com/film/chungking-express/",
+        "image": "data/assets/chungking_express.png"
+      },
+      {
+        "name": "the departed",
+        "url": "https://letterboxd.com/film/the-departed/",
+        "image": "data/assets/the_departed.png"
+      }
+    ]
+  }
+]
