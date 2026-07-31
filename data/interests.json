@@ -1,5 +1,52 @@
 [
   {
+    "misc":[
+      {
+        "name": "chess",
+        "url": "https://www.chess.com/openings/Pirc-Defense",
+        "image": "data/assets/chess.png"
+      }
+    ],
+    "video games":[],
+    "board games":[],
+    "books":[],
+    "sports": [
+      {
+        "name": "bruins",
+        "url": "https://sports.yahoo.com/nhl/teams/boston/",
+        "image": "data/assets/bruins.jpg"
+      },
+      {
+        "name": "celtics",
+        "url": "https://sports.yahoo.com/nba/teams/boston/",
+        "image": "data/assets/celtics.jpg"
+      },
+      {
+        "name": "patriots",
+        "url": "https://sports.yahoo.com/nfl/teams/new-england/",
+        "image": "data/assets/patriots.jpg"
+      },
+      {
+        "name": "red sox",
+        "url": "https://sports.yahoo.com/mlb/teams/boston/",
+        "image": "data/assets/red_sox.jpeg"
+      },
+      {
+        "name": "michigan_basketball",
+        "url": "https://sports.yahoo.com/ncaab/teams/michigan/",
+        "image": "data/assets/michigan_basketball.jpg"
+      },
+      {
+        "name": "michigan_football",
+        "url": "https://sports.yahoo.com/ncaaf/teams/michigan/",
+        "image": "data/assets/michigan_football.jpeg"
+      },
+      {
+        "name": "ac_milan",
+        "url": "https://sports.yahoo.com/soccer/teams/milan/",
+        "image": "data/assets/ac_milan.jpg"
+      }
+    ],
     "music": [
       {
         "name": "among my swan",
@@ -10,6 +57,11 @@
         "name": "tha carter ii",
         "url": "https://open.spotify.com/album/5qyUw6x9fjZPoQHUwuDu39",
         "image": "data/assets/lil_wayne_tha_carter_ii.jpg"
+      },
+      {
+        "name": "diaries",
+        "url": "https://open.spotify.com/album/6CpJk93i073C15rPetrv3m",
+        "image": "data/assets/diaries.jpg"
       }
     ],
     "film": [
@@ -22,6 +74,11 @@
         "name": "the departed",
         "url": "https://letterboxd.com/film/the-departed/",
         "image": "data/assets/the_departed.png"
+      },
+      {
+        "name": "tie xi qu",
+        "url": "https://letterboxd.com/film/tie-xi-qu-west-of-the-tracks/",
+        "image": "data/assets/tie_xi_qu.jpg"
       }
     ]
   }

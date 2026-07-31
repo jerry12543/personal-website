@@ -41,38 +41,6 @@ async function loadFooterSocials() {
 
 loadFooterSocials();
 
-async function loadInterestCollage() {
-  const container = document.getElementById("interestCollage");
-  const response = await fetch("data/interests.json");
-  const data = await response.json();
-
-  const items = data.flatMap((group) => Object.values(group).flat());
-
-  for (let i = items.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [items[i], items[j]] = [items[j], items[i]];
-  }
-
-  items.forEach((item) => {
-    const link = document.createElement("a");
-    link.href = item.url;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.className = "interest-card";
-    link.setAttribute("aria-label", item.name);
-
-    const img = document.createElement("img");
-    img.src = item.image;
-    img.alt = item.name;
-    img.loading = "lazy";
-
-    link.appendChild(img);
-    container.appendChild(link);
-  });
-}
-
-loadInterestCollage();
-
 const modal = document.getElementById("wasteTimeModal");
 const openBtn = document.getElementById("wasteTimeBtn");
 const closeBtn = document.getElementById("modalClose");

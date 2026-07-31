@@ -9,7 +9,7 @@
         232,
         0.07
     ); /* hover background tint */
-    --color-modal-bg: rgba(164, 196, 223, 1); /* modal background (#8C001A) */
+    --color-modal-bg: #a4c4df;
 }
 
 body {
@@ -89,7 +89,7 @@ section {
     color: var(--color-fg-muted);
     font-size: 1.25rem;
     cursor: pointer;
-    transition: color 0.2s ease;
+    /*transition: color 0.2s ease;*/
     padding: 0;
 }
 
@@ -97,42 +97,14 @@ section {
     color: var(--color-fg);
 }
 
-/* ── Interest Collage ── */
-.interest-collage {
-    column-count: 4;
-    column-gap: 1.5rem;
-    padding: 5rem 3rem 3rem;
+/* ── Infinite Canvas ── */
+.infinite-canvas-host {
+    position: absolute;
+    inset: 0;
 }
 
-@media (max-width: 1100px) {
-    .interest-collage {
-        column-count: 3;
-    }
-}
-
-@media (max-width: 750px) {
-    .interest-collage {
-        column-count: 2;
-    }
-}
-
-.interest-card {
-    display: block;
-    margin: 0 0 1.5rem;
-    break-inside: avoid;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.25s ease;
-}
-
-.interest-card:hover {
-    transform: translateY(-4px);
-}
-
-.interest-card img {
-    width: 100%;
-    height: auto;
-    display: block;
+.modal:not(.open) .infinite-canvas-host {
+    visibility: hidden;
 }
 
 /* ── Footer ── */
