@@ -31,34 +31,121 @@ section {
     font-size: 8em;
 }
 
-/* ── Card Link ── */
-.card-link {
+/* ── Waste Time Card ── */
+.waste-time-card {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    margin-top: 2rem;
-    padding: 1.25rem 1.5rem;
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
+    justify-content: center;
+    position: relative;
+    width: min(72rem, calc(100vw - 3rem));
+    min-height: clamp(22rem, 58vh, 36rem);
+    overflow: hidden;
+    border: 1px solid rgba(255, 230, 232, 0.34);
+    border-radius: 8px;
     text-decoration: none;
-    color: var(--color-fg);
-    font-size: 1rem;
-    background: transparent;
+    background-color: #c8a69f;
+    background-image:
+        linear-gradient(rgba(255, 241, 232, 0.26), rgba(48, 7, 18, 0.16)),
+        url("data/assets/wastingtime.jpg");
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
     transition:
-        background 0.2s ease,
-        border-color 0.2s ease;
+        border-color 300ms ease,
+        box-shadow 300ms ease;
     cursor: pointer;
 }
 
-.card-link:hover {
-    background: var(--color-surface-hover);
-    border-color: var(--color-fg-muted);
+.waste-time-card::before {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(2, 12, 24, 0.3), rgba(2, 12, 24, 0.66)),
+        url("data/assets/requiemforadream.jpg");
+    background-position: center;
+    background-size: cover;
+    content: "";
+    opacity: 0;
+    transition: opacity 380ms ease;
 }
 
-.card-link-arrow {
-    font-size: 1.1rem;
-    flex-shrink: 0;
+.waste-time-card:hover,
+.waste-time-card:focus-visible {
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.34);
+    outline: none;
+}
+
+.waste-time-card:hover::before,
+.waste-time-card:focus-visible::before {
+    opacity: 1;
+}
+
+.waste-time-card-content {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: min(44rem, calc(100% - 3rem));
+    text-align: center;
+    transition:
+        opacity 260ms ease,
+        transform 380ms ease;
+    z-index: 1;
+}
+
+.waste-time-card-quote {
+    color: #650d2b;
+    text-shadow: 0 2px 18px rgba(255, 244, 237, 0.9);
+}
+
+.waste-time-card-quote-text {
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: clamp(2rem, 4.25vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+}
+
+.waste-time-card-attribution {
+    font-family: "Arial Black", Arial, sans-serif;
+    margin-top: 1.25rem;
+    font-size: clamp(0.9rem, 1.35vw, 1.2rem);
+    font-weight: 900;
+}
+
+.waste-time-card-invitation {
+    color: #fff4f1;
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: clamp(2rem, 4.25vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    opacity: 0;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.72);
+    transform: translateY(1.25rem);
+}
+
+.waste-time-card:hover .waste-time-card-quote,
+.waste-time-card:focus-visible .waste-time-card-quote {
+    opacity: 0;
+    transform: translateY(-1.25rem);
+}
+
+.waste-time-card:hover .waste-time-card-invitation,
+.waste-time-card:focus-visible .waste-time-card-invitation {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 700px) {
+    .waste-time-card {
+        width: min(calc(100% - 2rem), 34rem);
+        min-height: 28rem;
+    }
+
+    .waste-time-card-content {
+        width: calc(100% - 2.5rem);
+    }
 }
 
 /* ── Modal ── */
