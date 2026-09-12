@@ -1,14 +1,17 @@
 :root {
-    --color-bg: rgba(28, 2, 33, 1); /* background */
-    --color-fg: rgba(255, 230, 232, 1); /* text */
-    --color-fg-muted: rgba(255, 230, 232, 0.45); /* faded text */
-    --color-border: rgba(255, 230, 232, 0.2); /* subtle border */
-    --color-surface-hover: rgba(
-        255,
-        230,
-        232,
-        0.07
-    ); /* hover background tint */
+    --color-bg: rgba(28, 2, 33, 1);
+    /* background */
+    --color-fg: rgba(255, 230, 232, 1);
+    /* text */
+    --color-fg-muted: rgba(255, 230, 232, 0.45);
+    /* faded text */
+    --color-border: rgba(255, 230, 232, 0.2);
+    /* subtle border */
+    --color-surface-hover: rgba(255,
+            230,
+            232,
+            0.07);
+    /* hover background tint */
     --color-modal-bg: #a4c4df;
 }
 
@@ -46,7 +49,7 @@ section {
     background-color: #c8a69f;
     background-image:
         linear-gradient(rgba(255, 241, 232, 0.26), rgba(48, 7, 18, 0.16)),
-        url("data/assets/wastingtime.jpg");
+        url("data/assets/wastingtime.png");
     background-position: center;
     background-size: cover;
     box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
@@ -97,32 +100,62 @@ section {
 
 .waste-time-card-quote {
     color: #650d2b;
-    text-shadow: 0 2px 18px rgba(255, 244, 237, 0.9);
+    text-shadow: 0 3px 14px rgba(255, 244, 237, 0.72);
 }
 
 .waste-time-card-quote-text {
-    font-family: "Arial Black", Arial, sans-serif;
-    font-size: clamp(2rem, 4.25vw, 4.5rem);
-    font-weight: 900;
-    line-height: 1.05;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Cinzel", Georgia, serif;
+    font-weight: 400;
+    line-height: 1.1;
 }
 
 .waste-time-card-attribution {
-    font-family: "Arial Black", Arial, sans-serif;
-    margin-top: 1.25rem;
-    font-size: clamp(0.9rem, 1.35vw, 1.2rem);
-    font-weight: 900;
+    margin-top: 1.5rem;
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.16em;
 }
 
 .waste-time-card-invitation {
     color: #fff4f1;
-    font-family: "Arial Black", Arial, sans-serif;
-    font-size: clamp(2rem, 4.25vw, 4.5rem);
-    font-weight: 900;
-    line-height: 1.05;
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    line-height: 1.3;
     opacity: 0;
-    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.72);
+    text-shadow: 0 3px 16px rgba(0, 0, 0, 0.88);
     transform: translateY(1.25rem);
+}
+
+.waste-time-card-small-line,
+.waste-time-card-display-line,
+.waste-time-card-composed-line {
+    display: block;
+}
+
+.waste-time-card-composed-line {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.55rem;
+}
+
+.waste-time-card-small-line {
+    font-size: 0.58em;
+    letter-spacing: 0.28em;
+    line-height: 1.6;
+}
+
+.waste-time-card-display-line {
+    font-size: 3.25rem;
+    letter-spacing: 0.14em;
+    line-height: 1.12;
+    white-space: nowrap;
 }
 
 .waste-time-card:hover .waste-time-card-quote,
@@ -145,6 +178,15 @@ section {
 
     .waste-time-card-content {
         width: calc(100% - 2.5rem);
+    }
+
+    .waste-time-card-display-line {
+        font-size: 1.55rem;
+        letter-spacing: 0.1em;
+    }
+
+    .waste-time-card-small-line {
+        letter-spacing: 0.2em;
     }
 }
 

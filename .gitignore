@@ -2,3 +2,5 @@ notes.md
 tasks/
 .vite/
 test-results/
+
+.DS_STORE
