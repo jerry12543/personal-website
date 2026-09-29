@@ -57,8 +57,7 @@ closeBtn.addEventListener("click", () => {
 });
 
 const wasteTimeSection = document.querySelector(".waste-time-section");
-const wasteTimeVideo = openBtn.querySelector(".waste-time-hover-video");
-let isScrubbingVideo = false;
+const wasteTimeVideo = openBtn.querySelector(".waste-time-video");
 let scrollSyncFrame = 0;
 
 function getWasteTimeScrollProgress() {
@@ -72,7 +71,6 @@ function getWasteTimeScrollProgress() {
 function syncWasteTimeVideo() {
   scrollSyncFrame = 0;
   if (
-    !isScrubbingVideo ||
     wasteTimeVideo.readyState < HTMLMediaElement.HAVE_METADATA ||
     !Number.isFinite(wasteTimeVideo.duration)
   ) {
@@ -86,6 +84,8 @@ function syncWasteTimeVideo() {
   );
   if (Math.abs(wasteTimeVideo.currentTime - nextTime) > 0.04) {
     wasteTimeVideo.currentTime = nextTime;
+  } else if (wasteTimeVideo.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+    openBtn.classList.add("is-video-ready");
   }
 }
 
@@ -95,31 +95,12 @@ function queueWasteTimeVideoSync() {
   }
 }
 
-function setWasteTimeScrubbing(active) {
-  isScrubbingVideo = active;
-  wasteTimeVideo.pause();
-  openBtn.classList.toggle(
-    "is-scrubbing",
-    active && wasteTimeVideo.readyState >= HTMLMediaElement.HAVE_METADATA,
-  );
-  queueWasteTimeVideoSync();
-}
-
-wasteTimeVideo.addEventListener("loadedmetadata", () => {
-  if (isScrubbingVideo) {
-    openBtn.classList.add("is-scrubbing");
-  }
+wasteTimeVideo.addEventListener("loadedmetadata", queueWasteTimeVideoSync);
+wasteTimeVideo.addEventListener("loadeddata", queueWasteTimeVideoSync);
+wasteTimeVideo.addEventListener("seeked", () => {
+  openBtn.classList.add("is-video-ready");
   queueWasteTimeVideoSync();
 });
-wasteTimeVideo.addEventListener("seeked", queueWasteTimeVideoSync);
 
-openBtn.addEventListener("pointerenter", () => setWasteTimeScrubbing(true));
-openBtn.addEventListener("pointerleave", () => {
-  setWasteTimeScrubbing(openBtn.matches(":focus"));
-});
-openBtn.addEventListener("focus", () => setWasteTimeScrubbing(true));
-openBtn.addEventListener("blur", () => {
-  setWasteTimeScrubbing(openBtn.matches(":hover"));
-});
 window.addEventListener("scroll", queueWasteTimeVideoSync, { passive: true });
 window.addEventListener("resize", queueWasteTimeVideoSync);

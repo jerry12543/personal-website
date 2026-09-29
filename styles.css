@@ -66,21 +66,6 @@ section {
     margin-top: 1.4em;
 }
 
-.waste-time-copy .waste-time-card-composed-line {
-    justify-content: flex-start;
-    gap: 0.3rem;
-}
-
-.waste-time-copy .waste-time-card-small-line {
-    letter-spacing: 0.12em;
-}
-
-.waste-time-copy .waste-time-card-display-line {
-    font-size: clamp(1.7rem, 2.5vw, 2.5rem);
-    letter-spacing: 0.06em;
-    white-space: normal;
-}
-
 /* ── Waste Time Card ── */
 .waste-time-card {
     display: flex;
@@ -116,10 +101,10 @@ section {
     background-size: cover;
     content: "";
     opacity: 0;
-    transition: opacity 180ms ease;
+    transition: opacity 450ms ease;
 }
 
-.waste-time-hover-video {
+.waste-time-video {
     position: absolute;
     inset: 0;
     z-index: 1;
@@ -128,11 +113,15 @@ section {
     object-fit: cover;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 120ms ease;
+    transition: opacity 450ms ease;
 }
 
-.waste-time-card.is-scrubbing .waste-time-hover-video {
+.waste-time-card.is-video-ready .waste-time-video {
     opacity: 1;
+}
+
+.waste-time-copy:hover + .waste-time-card .waste-time-video {
+    opacity: 0;
 }
 
 .waste-time-card:focus-visible {
@@ -174,14 +163,6 @@ section {
     line-height: 1.1;
 }
 
-.waste-time-card-attribution {
-    margin-top: 1.5rem;
-    font-family: "Cinzel", Georgia, serif;
-    font-size: 0.7rem;
-    font-weight: 400;
-    letter-spacing: 0.16em;
-}
-
 .waste-time-card-invitation {
     color: #fff4f1;
     font-family: "Cinzel", Georgia, serif;
@@ -221,15 +202,27 @@ section {
 }
 
 .waste-time-card:hover .waste-time-card-invitation,
-.waste-time-card:focus-visible .waste-time-card-invitation {
+.waste-time-card:focus-visible .waste-time-card-invitation,
+.waste-time-card.is-video-ready .waste-time-card-invitation {
     opacity: 1;
     transform: translateY(0);
 }
 
 .waste-time-card:hover .waste-time-card-quote,
-.waste-time-card:focus-visible .waste-time-card-quote {
+.waste-time-card:focus-visible .waste-time-card-quote,
+.waste-time-card.is-video-ready .waste-time-card-quote {
     opacity: 0;
     transform: translateY(-1.25rem);
+}
+
+.waste-time-copy:hover + .waste-time-card .waste-time-card-invitation {
+    opacity: 0;
+    transform: translateY(1.25rem);
+}
+
+.waste-time-copy:hover + .waste-time-card .waste-time-card-quote {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 @media (max-width: 700px) {
