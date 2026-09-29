@@ -34,17 +34,68 @@ section {
     font-size: 8em;
 }
 
+.waste-time-section {
+    box-sizing: border-box;
+    grid-template-columns: minmax(14rem, 1fr) minmax(0, 3fr);
+    grid-template-rows: auto;
+    gap: 1.5rem;
+    padding: 0 0 0 1.5rem;
+    place-items: stretch;
+    align-content: stretch;
+}
+
+.waste-time-copy {
+    grid-column: 1;
+    align-self: start;
+    min-width: 0;
+    padding: clamp(2rem, 4vw, 4rem) 1rem 3rem 0;
+    color: var(--color-fg);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.waste-time-copy-content {
+    max-width: 30rem;
+}
+
+.waste-time-copy-content p {
+    margin: 0;
+}
+
+.waste-time-copy-content p + p {
+    margin-top: 1.4em;
+}
+
+.waste-time-copy .waste-time-card-composed-line {
+    justify-content: flex-start;
+    gap: 0.3rem;
+}
+
+.waste-time-copy .waste-time-card-small-line {
+    letter-spacing: 0.12em;
+}
+
+.waste-time-copy .waste-time-card-display-line {
+    font-size: clamp(1.7rem, 2.5vw, 2.5rem);
+    letter-spacing: 0.06em;
+    white-space: normal;
+}
+
 /* ── Waste Time Card ── */
 .waste-time-card {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    width: min(72rem, calc(100vw - 3rem));
-    min-height: clamp(22rem, 58vh, 36rem);
+    align-self: start;
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
     overflow: hidden;
-    border: 1px solid rgba(255, 230, 232, 0.34);
-    border-radius: 8px;
+    border: 0;
+    border-radius: 0;
     text-decoration: none;
     background-color: #c8a69f;
     background-image:
@@ -52,10 +103,6 @@ section {
         url("data/assets/wastingtime.png");
     background-position: center;
     background-size: cover;
-    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
-    transition:
-        border-color 300ms ease,
-        box-shadow 300ms ease;
     cursor: pointer;
 }
 
@@ -69,14 +116,28 @@ section {
     background-size: cover;
     content: "";
     opacity: 0;
-    transition: opacity 380ms ease;
+    transition: opacity 180ms ease;
 }
 
-.waste-time-card:hover,
+.waste-time-hover-video {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 120ms ease;
+}
+
+.waste-time-card.is-scrubbing .waste-time-hover-video {
+    opacity: 1;
+}
+
 .waste-time-card:focus-visible {
-    border-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.34);
-    outline: none;
+    outline: 1px solid currentColor;
+    outline-offset: 3px;
 }
 
 .waste-time-card:hover::before,
@@ -93,12 +154,13 @@ section {
     width: min(44rem, calc(100% - 3rem));
     text-align: center;
     transition:
-        opacity 260ms ease,
-        transform 380ms ease;
+        opacity 150ms ease,
+        transform 220ms ease;
     z-index: 1;
 }
 
 .waste-time-card-quote {
+    margin: 0;
     color: #650d2b;
     text-shadow: 0 3px 14px rgba(255, 244, 237, 0.72);
 }
@@ -158,22 +220,40 @@ section {
     white-space: nowrap;
 }
 
-.waste-time-card:hover .waste-time-card-quote,
-.waste-time-card:focus-visible .waste-time-card-quote {
-    opacity: 0;
-    transform: translateY(-1.25rem);
-}
-
 .waste-time-card:hover .waste-time-card-invitation,
 .waste-time-card:focus-visible .waste-time-card-invitation {
     opacity: 1;
     transform: translateY(0);
 }
 
+.waste-time-card:hover .waste-time-card-quote,
+.waste-time-card:focus-visible .waste-time-card-quote {
+    opacity: 0;
+    transform: translateY(-1.25rem);
+}
+
 @media (max-width: 700px) {
+    .waste-time-section {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto auto;
+        gap: 0;
+        padding: 0;
+        align-content: stretch;
+    }
+
+    .waste-time-copy {
+        grid-column: 1;
+        grid-row: 2;
+        padding: 2rem 1.5rem 4rem;
+    }
+
     .waste-time-card {
-        width: min(calc(100% - 2rem), 34rem);
-        min-height: 28rem;
+        grid-column: 1;
+        grid-row: 1;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        aspect-ratio: auto;
     }
 
     .waste-time-card-content {
@@ -181,12 +261,18 @@ section {
     }
 
     .waste-time-card-display-line {
-        font-size: 1.55rem;
-        letter-spacing: 0.1em;
+        font-size: clamp(1.6rem, 8vw, 2.25rem);
+        letter-spacing: 0.06em;
+        white-space: normal;
     }
 
     .waste-time-card-small-line {
-        letter-spacing: 0.2em;
+        letter-spacing: 0.12em;
+    }
+
+    .waste-time-card-composed-line {
+        justify-content: flex-start;
+        gap: 0.3rem;
     }
 }
 

@@ -1,83 +1,173 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <!-- Metadata Stuff-->
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>welcome!</title>
-        <!-- Link to styles-->
-        <link rel="stylesheet" href="styles.css" />
-        <link rel="stylesheet" href="canvas/modal-canvas.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Cinzel&display=swap"
-            rel="stylesheet"
-        />
-        <script defer src="app.js"></script>
-        <script defer src="canvas/modal-canvas.iife.js"></script>
-        <script defer src="modal-canvas.js"></script>
-    </head>
 
-    <body>
-        <section>
-            <h1 id="time"></h1>
-        </section>
+<head>
+    <!-- Metadata Stuff-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>welcome!</title>
+    <!-- Link to styles-->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="canvas/modal-canvas.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Cinzel&display=swap"
+        rel="stylesheet" />
+    <script defer src="app.js"></script>
+    <script defer src="canvas/modal-canvas.iife.js"></script>
+    <script defer src="modal-canvas.js"></script>
+</head>
 
-        <section>
-            <a href="#" class="waste-time-card" id="wasteTimeBtn">
-                <span class="waste-time-card-content waste-time-card-quote">
-                    <span class="waste-time-card-quote-text">
-                        <span class="waste-time-card-composed-line">
-                            <span class="waste-time-card-small-line">the</span>
-                            <span class="waste-time-card-display-line">time</span>
-                        </span>
-                        <span class="waste-time-card-composed-line">
-                            <span class="waste-time-card-small-line">you</span>
-                            <span class="waste-time-card-display-line">enjoy</span>
-                        </span>
-                        <span class="waste-time-card-display-line">wasting</span>
-                        <span class="waste-time-card-composed-line">
-                            <span class="waste-time-card-small-line">is</span>
-                            <span class="waste-time-card-display-line">not</span>
-                        </span>
-                        <span class="waste-time-card-composed-line">
-                            <span class="waste-time-card-display-line">wasted</span>
-                            <span class="waste-time-card-small-line">time</span>
-                        </span>
+<body>
+    <section>
+        <h1 id="time"></h1>
+    </section>
+
+    <section class="waste-time-section">
+        <article class="waste-time-copy" id="wasteTimeCopy">
+            <div class="waste-time-copy-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at lectus sed nulla gravida
+                    volutpat. Donec vitae sapien non justo vestibulum pretium. Nulla facilisi. Sed euismod, erat at
+                    pharetra convallis, justo mauris ullamcorper velit, vitae tempor arcu lacus non magna.</p>
+                <p>Praesent tincidunt, augue vitae fermentum porttitor, nibh nisi laoreet purus, sed blandit sem lectus
+                    id ante. Curabitur faucibus, neque non malesuada viverra, justo eros feugiat nibh, at sagittis lorem
+                    velit sit amet arcu. Nam ac odio ac mi tristique posuere.</p>
+                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce vel
+                    lectus at ligula faucibus laoreet. Aenean sed ipsum at erat tincidunt feugiat. Maecenas vel interdum
+                    justo. Suspendisse potenti, sed consequat ligula viverra vitae.</p>
+                <p>Morbi consequat felis in mauris convallis, in interdum arcu malesuada. Aliquam erat volutpat. Cras
+                    imperdiet metus id augue faucibus, nec iaculis purus consequat. Donec blandit, augue vel luctus
+                    luctus, nisl nulla ullamcorper erat, sed viverra lorem risus non neque.</p>
+                <p>Quisque sit amet massa non neque malesuada mattis. Nulla facilisi. Vivamus vitae risus sed sapien
+                    tempus sodales. Etiam vel sem in nunc dictum facilisis, at luctus dolor gravida. In hac habitasse
+                    platea dictumst. Integer ut justo quis magna finibus interdum.</p>
+                <p>Donec posuere sem eu lectus suscipit, eget viverra turpis consequat. Sed sit amet libero vel urna
+                    imperdiet faucibus. In hac habitasse platea dictumst. Curabitur posuere, quam eu feugiat aliquet,
+                    orci dolor posuere justo, sed laoreet tellus arcu quis nisl.</p>
+                <p>Nam auctor mauris vel tellus sollicitudin, non commodo nunc feugiat. Integer eget lacinia velit.
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed
+                    feugiat, urna sed malesuada sagittis, est lorem laoreet odio, sed blandit tortor purus sit amet
+                    justo.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at lectus sed nulla gravida
+                    volutpat. Donec vitae sapien non justo vestibulum pretium. Nulla facilisi. Sed euismod, erat at
+                    pharetra convallis, justo mauris ullamcorper velit, vitae tempor arcu lacus non magna.</p>
+                <p>Praesent tincidunt, augue vitae fermentum porttitor, nibh nisi laoreet purus, sed blandit sem lectus
+                    id ante. Curabitur faucibus, neque non malesuada viverra, justo eros feugiat nibh, at sagittis lorem
+                    velit sit amet arcu. Nam ac odio ac mi tristique posuere.</p>
+                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce vel
+                    lectus at ligula faucibus laoreet. Aenean sed ipsum at erat tincidunt feugiat. Maecenas vel interdum
+                    justo. Suspendisse potenti, sed consequat ligula viverra vitae.</p>
+                <p>Morbi consequat felis in mauris convallis, in interdum arcu malesuada. Aliquam erat volutpat. Cras
+                    imperdiet metus id augue faucibus, nec iaculis purus consequat. Donec blandit, augue vel luctus
+                    luctus, nisl nulla ullamcorper erat, sed viverra lorem risus non neque.</p>
+                <p>Quisque sit amet massa non neque malesuada mattis. Nulla facilisi. Vivamus vitae risus sed sapien
+                    tempus sodales. Etiam vel sem in nunc dictum facilisis, at luctus dolor gravida. In hac habitasse
+                    platea dictumst. Integer ut justo quis magna finibus interdum.</p>
+                <p>Donec posuere sem eu lectus suscipit, eget viverra turpis consequat. Sed sit amet libero vel urna
+                    imperdiet faucibus. In hac habitasse platea dictumst. Curabitur posuere, quam eu feugiat aliquet,
+                    orci dolor posuere justo, sed laoreet tellus arcu quis nisl.</p>
+                <p>Nam auctor mauris vel tellus sollicitudin, non commodo nunc feugiat. Integer eget lacinia velit.
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed
+                    feugiat, urna sed malesuada sagittis, est lorem laoreet odio, sed blandit tortor purus sit amet
+                    justo.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at lectus sed nulla gravida
+                    volutpat. Donec vitae sapien non justo vestibulum pretium. Nulla facilisi. Sed euismod, erat at
+                    pharetra convallis, justo mauris ullamcorper velit, vitae tempor arcu lacus non magna.</p>
+                <p>Praesent tincidunt, augue vitae fermentum porttitor, nibh nisi laoreet purus, sed blandit sem lectus
+                    id ante. Curabitur faucibus, neque non malesuada viverra, justo eros feugiat nibh, at sagittis lorem
+                    velit sit amet arcu. Nam ac odio ac mi tristique posuere.</p>
+                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce vel
+                    lectus at ligula faucibus laoreet. Aenean sed ipsum at erat tincidunt feugiat. Maecenas vel interdum
+                    justo. Suspendisse potenti, sed consequat ligula viverra vitae.</p>
+                <p>Morbi consequat felis in mauris convallis, in interdum arcu malesuada. Aliquam erat volutpat. Cras
+                    imperdiet metus id augue faucibus, nec iaculis purus consequat. Donec blandit, augue vel luctus
+                    luctus, nisl nulla ullamcorper erat, sed viverra lorem risus non neque.</p>
+                <p>Quisque sit amet massa non neque malesuada mattis. Nulla facilisi. Vivamus vitae risus sed sapien
+                    tempus sodales. Etiam vel sem in nunc dictum facilisis, at luctus dolor gravida. In hac habitasse
+                    platea dictumst. Integer ut justo quis magna finibus interdum.</p>
+                <p>Donec posuere sem eu lectus suscipit, eget viverra turpis consequat. Sed sit amet libero vel urna
+                    imperdiet faucibus. In hac habitasse platea dictumst. Curabitur posuere, quam eu feugiat aliquet,
+                    orci dolor posuere justo, sed laoreet tellus arcu quis nisl.</p>
+                <p>Nam auctor mauris vel tellus sollicitudin, non commodo nunc feugiat. Integer eget lacinia velit.
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed
+                    feugiat, urna sed malesuada sagittis, est lorem laoreet odio, sed blandit tortor purus sit amet
+                    justo.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at lectus sed nulla gravida
+                    volutpat. Donec vitae sapien non justo vestibulum pretium. Nulla facilisi. Sed euismod, erat at
+                    pharetra convallis, justo mauris ullamcorper velit, vitae tempor arcu lacus non magna.</p>
+                <p>Praesent tincidunt, augue vitae fermentum porttitor, nibh nisi laoreet purus, sed blandit sem lectus
+                    id ante. Curabitur faucibus, neque non malesuada viverra, justo eros feugiat nibh, at sagittis lorem
+                    velit sit amet arcu. Nam ac odio ac mi tristique posuere.</p>
+                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce vel
+                    lectus at ligula faucibus laoreet. Aenean sed ipsum at erat tincidunt feugiat. Maecenas vel interdum
+                    justo. Suspendisse potenti, sed consequat ligula viverra vitae.</p>
+                <p>Morbi consequat felis in mauris convallis, in interdum arcu malesuada. Aliquam erat volutpat. Cras
+                    imperdiet metus id augue faucibus, nec iaculis purus consequat. Donec blandit, augue vel luctus
+                    luctus, nisl nulla ullamcorper erat, sed viverra lorem risus non neque.</p>
+                <p>Quisque sit amet massa non neque malesuada mattis. Nulla facilisi. Vivamus vitae risus sed sapien
+                    tempus sodales. Etiam vel sem in nunc dictum facilisis, at luctus dolor gravida. In hac habitasse
+                    platea dictumst. Integer ut justo quis magna finibus interdum.</p>
+                <p>Donec posuere sem eu lectus suscipit, eget viverra turpis consequat. Sed sit amet libero vel urna
+                    imperdiet faucibus. In hac habitasse platea dictumst. Curabitur posuere, quam eu feugiat aliquet,
+                    orci dolor posuere justo, sed laoreet tellus arcu quis nisl.</p>
+                <p>Nam auctor mauris vel tellus sollicitudin, non commodo nunc feugiat. Integer eget lacinia velit.
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed
+                    feugiat, urna sed malesuada sagittis, est lorem laoreet odio, sed blandit tortor purus sit amet
+                    justo.</p>
+            </div>
+        </article>
+        <a href="#" class="waste-time-card" id="wasteTimeBtn" aria-label="Open the infinite canvas">
+            <video class="waste-time-hover-video" muted playsinline preload="auto" aria-hidden="true">
+                <source src="data/assets/wastingtime-hover-scrub.mp4" type="video/mp4" />
+            </video>
+            <span class="waste-time-card-content waste-time-card-quote">
+                <span class="waste-time-card-quote-text">
+                    <span class="waste-time-card-composed-line">
+                        <span class="waste-time-card-small-line">the</span>
+                        <span class="waste-time-card-display-line">time</span>
                     </span>
-                    <span class="waste-time-card-attribution">- Marthe Troly-Curtin</span>
+                    <span class="waste-time-card-composed-line">
+                        <span class="waste-time-card-small-line">you</span>
+                        <span class="waste-time-card-display-line">enjoy</span>
+                    </span>
+                    <span class="waste-time-card-display-line">wasting</span>
+                    <span class="waste-time-card-composed-line">
+                        <span class="waste-time-card-small-line">is</span>
+                        <span class="waste-time-card-display-line">not</span>
+                    </span>
+                    <span class="waste-time-card-composed-line">
+                        <span class="waste-time-card-display-line">wasted</span>
+                        <span class="waste-time-card-small-line">time</span>
+                    </span>
                 </span>
-                <span class="waste-time-card-content waste-time-card-invitation">
-                    <span class="waste-time-card-small-line">anybody wanna</span>
-                    <span class="waste-time-card-display-line">waste</span>
-                    <span class="waste-time-card-small-line">some</span>
-                    <span class="waste-time-card-display-line">time?</span>
-                </span>
-            </a>
-        </section>
+            </span>
+            <span class="waste-time-card-content waste-time-card-invitation">
+                <span class="waste-time-card-small-line">anybody wanna</span>
+                <span class="waste-time-card-display-line">waste</span>
+                <span class="waste-time-card-small-line">some</span>
+                <span class="waste-time-card-display-line">time?</span>
+            </span>
+        </a>
+    </section>
 
-        <div class="modal" id="wasteTimeModal" aria-hidden="true">
-            <button class="modal-close" id="modalClose" aria-label="Close">
-                ✕
-            </button>
-            <div class="infinite-canvas-host" id="infiniteCanvasHost"></div>
+    <div class="modal" id="wasteTimeModal" aria-hidden="true">
+        <button class="modal-close" id="modalClose" aria-label="Close">
+            ✕
+        </button>
+        <div class="infinite-canvas-host" id="infiniteCanvasHost"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-upper">
+            <nav class="footer-socials" id="footerSocials" aria-label="Social links"></nav>
+            <div class="footer-taglines">
+                <p>no man is a failure who has friends.</p>
+                <p>let's connect!</p>
+            </div>
         </div>
+        <div class="footer-wordmark" aria-hidden="true">
+            <span class="footer-wordmark-text">Jerry Zhu</span>
+        </div>
+    </footer>
+</body>
 
-        <footer class="footer">
-            <div class="footer-upper">
-                <nav
-                    class="footer-socials"
-                    id="footerSocials"
-                    aria-label="Social links"
-                ></nav>
-                <div class="footer-taglines">
-                    <p>no man is a failure who has friends.</p>
-                    <p>let's connect!</p>
-                </div>
-            </div>
-            <div class="footer-wordmark" aria-hidden="true">
-                <span class="footer-wordmark-text">Jerry Zhu</span>
-            </div>
-        </footer>
-    </body>
 </html>
